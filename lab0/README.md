@@ -24,6 +24,7 @@ F# — действительно функциональный язык, но п
 ## Книга
 
 Я выбрала книгу “Fundamentals of F# Programming” Theophilus Edet за её структурированное и практическое изложение материала, а также актуальность для современной версии F#, так как книга выпущена в 2023 году. 
+
 Книга: https://drive.google.com/file/d/1VoSM2OJ5wNFaL1byRUJ_LBUyKLuse283/view?usp=sharing
 
 ## Лабораторная №4
