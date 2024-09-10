@@ -1,3 +1,5 @@
+# Лабораторная работа №0
+
 ## Язык: F#
 
 Компилятор/интерпретатор: .NET SDK
@@ -28,3 +30,11 @@ F# — действительно функциональный язык, но п
 Книга: https://drive.google.com/file/d/1VoSM2OJ5wNFaL1byRUJ_LBUyKLuse283/view?usp=sharing
 
 ## Лабораторная №4
+
+## Cписок прочитанных статей / книг / руководств при подготовке эссе:
+
+ 1) Документация: https://learn.microsoft.com/en-us/dotnet/fsharp/
+
+ 2) Статья: https://tomasp.net/blog/fsharp-ii-functional.aspx/
+
+ 3) Статья: https://fsharpforfunandprofit.com/why-use-fsharp/
