@@ -29,4 +29,7 @@
 
         printfn "Работа с бесконечными списками: %d" (findAmicableNumbersWithSeq 10000)
 
+        let result = findAmicableNumbers 10000
+        printfn "Цикл : %d" result
+
         0

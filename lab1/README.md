@@ -189,6 +189,25 @@ let findAmicableNumbersWithSeq limit =
         b <> a && b < limit && sumOfDivisorsMod b = a)
     |> Seq.sum
 ```
+### Реализация с циклом
+```fsharp
+let sumOfDivisors n =
+    let mutable total = 0
+    for i = 1 to n / 2 do
+        if n % i = 0 then
+            total <- total + i
+    total
+
+let findAmicableNumbers limit =
+    let mutable amicableNumbers = Set.empty
+    for number = 2 to limit - 1 do
+        if not (Set.contains number amicableNumbers) then
+            let partner = sumOfDivisors number
+            if partner <> number && partner < limit && sumOfDivisors partner = number then
+                amicableNumbers <- Set.add number amicableNumbers
+                amicableNumbers <- Set.add partner amicableNumbers
+    Set.fold (+) 0 amicableNumbers
+```
 ### Реализация на Python
 ```python
 def sum_of_divisors(n):
