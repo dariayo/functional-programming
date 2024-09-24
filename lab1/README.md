@@ -11,7 +11,7 @@ For example, $3^2 + 4^2 = 9 + 16 = 25 = 5^2$.
 There exists exactly one Pythagorean triplet for which $a + b + c = 1000$.Find the product $abc$.
 
 ### Реализация рекурсией
-```
+```fsharp
 let rec findB a b =
     let c = 1000 - a - b
 
@@ -47,7 +47,7 @@ let solveEuler9 =
 ```
 
 ### Реализация хвостовой рекурсией
-```
+```fsharp
 let rec findPythagoreanTripletTailRec a b =
     let c = 1000 - a - b
 
@@ -60,7 +60,7 @@ let rec findPythagoreanTripletTailRec a b =
 ```
 
 ### Модульная реализация + map
-```
+```fsharp
 let generateTriplets target =
     [ 1..target ]
     |> List.collect (fun a -> [ a + 1 .. target ] |> List.map (fun b -> (a, b, target - a - b)))
@@ -75,7 +75,7 @@ let findFirstValidTriplet target =
 ```
 
 ### Ленивые коллекции
-```
+```fsharp
 let lazyTripletSeq target =
     seq {
         for a in 1..target do
@@ -90,7 +90,7 @@ let lazyTripletSeq target =
 ```
 
 ### Реализация на Python
-```
+```python
 def find_pythagorean_triplet(target):
     for a in range(1, target):
         for b in range(a + 1, target - a):
@@ -110,7 +110,7 @@ For example, the proper divisors of $220$ are $1, 2, 4, 5, 10, 11, 20, 22, 44, 5
 Evaluate the sum of all the amicable numbers under $10000$.
 
 ### Реализация рекурсией
-```
+```fsharp
 let rec sumOfDivisorsNonTailRec n i =
     if i = 0 then 0
     elif n % i = 0 then i + sumOfDivisorsNonTailRec n (i - 1)
@@ -129,7 +129,7 @@ let rec findAmicableNumbersNonTailRec limit current sum =
 ```
 
 ### Реализация хвостовой рекурсией
-```
+```fsharp
 let sumOfDivisorsTailRec n =
     let rec loop i acc =
         if i = 0 then acc
@@ -154,7 +154,7 @@ let findAmicableNumbersTailRec limit =
 ```
 
 ### Модульная реализация
-```
+```fsharp
 let divisors n =
     [ 1 .. n / 2 ] |> List.filter (fun x -> n % x = 0)
 
@@ -169,7 +169,7 @@ let sumAmicableNumbersModular limit =
     [ 2 .. limit - 1 ] |> List.filter isAmicableModular |> List.fold (+) 0
 ```
 ### Map
-```
+```fsharp
 let sumAmicableWithMap limit =
     [ 2 .. limit - 1 ]
     |> List.map (fun n -> if isAmicableModular n then n else 0)
@@ -177,7 +177,7 @@ let sumAmicableWithMap limit =
 
 ```
 ### Ленивые коллекции
-```
+```fsharp
 let sumOfDivisorsMod n =
     [ 1 .. n / 2 ] |> List.filter (fun x -> n % x = 0) |> List.sum
 
@@ -190,7 +190,7 @@ let findAmicableNumbersWithSeq limit =
     |> Seq.sum
 ```
 ### Реализация на Python
-```
+```python
 def sum_of_divisors(n):
     total = 0
     for i in range(1, n // 2 + 1):
