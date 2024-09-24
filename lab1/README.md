@@ -96,7 +96,7 @@ def find_pythagorean_triplet(target):
         for b in range(a + 1, target - a):
             c = target - a - b
             if a**2 + b**2 == c**2:
-                return a, b, c, a * b * c
+                return a * b * c
     return None
 ```
 ## Задача 21. Amicable Numbers
